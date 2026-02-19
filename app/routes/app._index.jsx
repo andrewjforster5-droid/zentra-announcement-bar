@@ -11,9 +11,12 @@ export default function Index() {
   const shopify = useAppBridge();
 
   const openThemeEditor = () => {
-    shopify.intents.show("Opening theme editor...");
-    // This will open the theme editor in a new tab
-    window.open("https://admin.shopify.com/stores/themes", "_blank");
+    shopify.toast.show("Opening theme editor...");
+    // Open theme editor using App Bridge
+    shopify.resourcePicker({
+      type: "theme",
+      action: "select"
+    });
   };
 
   return (
