@@ -17,7 +17,7 @@ primary_region = 'lhr'
   processes = ['app']
 
   # Add health check configuration
-  [http_service.checks]
+  [[http_service.checks]]
     grace_period = "60s"
     interval = "15s"
     timeout = "10s"
