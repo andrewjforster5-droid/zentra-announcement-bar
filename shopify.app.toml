@@ -2,12 +2,11 @@
 
 client_id = "e07e85dc659ac38270e3a8c381d2e87b"
 name = "zentra-announcement-bar"
-application_url = "https://example.com"
+application_url = "https://zentra-announcement-bar.fly.dev"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
 api_version = "2026-04"
@@ -25,4 +24,8 @@ api_version = "2026-04"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://zentra-announcement-bar.fly.dev/auth/callback",
+  "https://zentra-announcement-bar.fly.dev/auth/shopify/callback",
+  "https://zentra-announcement-bar.fly.dev/api/auth/callback"
+]
