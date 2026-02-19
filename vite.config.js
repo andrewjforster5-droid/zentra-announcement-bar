@@ -37,11 +37,11 @@ if (host === "localhost") {
 
 export default defineConfig({
   server: {
-    allowedHosts: [host],
+    allowedHosts: ["0.0.0.0", host],
     cors: {
       preflightContinue: true,
     },
-    port: Number(process.env.PORT || 3000),
+    port: Number(process.env.PORT || 8080),
     hmr: hmrConfig,
     fs: {
       // See https://vitejs.dev/config/server-options.html#server-fs-allow for more information
