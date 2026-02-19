@@ -1,0 +1,517 @@
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "target": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link (optional)",
+      "info": "If added, a button will appear on all messages"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_desktop",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size (Desktop)",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "richtext",
+      "id": "message_1",
+      "label": "Message 1",
+      "default": "<p>Free shipping on orders over $50!</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "message_2",
+      "label": "Message 2"
+    },
+    {
+      "type": "richtext",
+      "id": "message_3",
+      "label": "Message 3"
+    },
+    {
+      "type": "richtext",
+      "id": "message_4",
+      "label": "Message 4"
+    },
+    {
+      "type": "richtext",
+      "id": "message_5",
+      "label": "Message 5"
+    },
+    {
+      "type": "header",
+      "content": "Rotation Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "Enable auto-rotate",
+      "default": true,
+      "info": "Automatically cycle through messages"
+    },
+    {
+      "type": "range",
+      "id": "rotate_interval",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "sec",
+      "label": "Auto-rotate interval",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_manual_controls",
+      "label": "Show manual navigation arrows",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dismiss_button",
+      "label": "Show dismiss button",
+      "default": false,
+      "info": "Allows customers to close the announcement bar"
+    },
+    {
+      "type": "range",
+      "id": "controls_gap_desktop",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Controls spacing (Desktop)",
+      "default": 20,
+      "info": "Space between arrows and dismiss button"
+    },
+    {
+      "type": "range",
+      "id": "controls_gap_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Controls spacing (Mobile)",
+      "default": 10,
+      "info": "Space between arrows and dismiss button"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "font_picker",
+      "id": "font_family",
+      "label": "Font",
+      "default": "assistant_n4",
+      "info": "Applies to all messages"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size (Mobile)",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Divider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show bottom divider",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "divider_thickness",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Divider thickness",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on mobile",
+      "default": true,
+      "info": "Display announcement bar on mobile devices"
+    },
+  ]
+}
+{% endschema %}
+
+{% liquid
+  assign messages = ''
+  assign message_count = 0
+  
+  if block.settings.message_1 != blank
+    assign messages = messages | append: block.settings.message_1 | append: '|||'
+    assign message_count = message_count | plus: 1
+  endif
+  
+  if block.settings.message_2 != blank
+    assign messages = messages | append: block.settings.message_2 | append: '|||'
+    assign message_count = message_count | plus: 1
+  endif
+  
+  if block.settings.message_3 != blank
+    assign messages = messages | append: block.settings.message_3 | append: '|||'
+    assign message_count = message_count | plus: 1
+  endif
+  
+  if block.settings.message_4 != blank
+    assign messages = messages | append: block.settings.message_4 | append: '|||'
+    assign message_count = message_count | plus: 1
+  endif
+  
+  if block.settings.message_5 != blank
+    assign messages = messages | append: block.settings.message_5 | append: '|||'
+    assign message_count = message_count | plus: 1
+  endif
+%}
+
+<style>
+  .zentra-announcement-bar-{{ block.id }} {
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    text-align: center;
+    padding: {{ block.settings.padding_top }}px 12px {{ block.settings.padding_bottom }}px 12px;
+    font-size: {{ block.settings.font_size_desktop }}px;
+    font-family: {{ block.settings.font_family.family }}, {{ block.settings.font_family.fallback_families }};
+    font-weight: {{ block.settings.font_family.weight }};
+    font-style: {{ block.settings.font_family.style }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: {{ block.settings.controls_gap_desktop }}px;
+    {% if block.settings.show_divider %}
+      border-bottom: {{ block.settings.divider_thickness }}px solid {{ block.settings.divider_color }}
+    {% endif %}
+  }
+  
+  .zentra-announcement-bar-{{ block.id }} .zentra-message-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    text-align: {{ block.settings.text_alignment }};
+  }
+  
+  .zentra-announcement-bar-{{ block.id }} .zentra-message {
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: {{ block.settings.text_alignment }};
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .zentra-announcement-bar-{{ block.id }} .zentra-message.zentra-active {
+    opacity: 1;
+    position: relative;
+  }
+
+  .zentra-announcement-bar-{{ block.id }} .zentra-message p {
+    margin: 0;
+  }
+
+  .zentra-announcement-bar-{{ block.id }} .zentra-nav-arrow {
+    background: none;
+    border: none;
+    color: {{ block.settings.text_color }};
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+  
+  .zentra-announcement-bar-{{ block.id }} .zentra-nav-arrow:hover {
+    opacity: 1;
+  }
+
+  .zentra-announcement-bar-{{ block.id }} .zentra-dismiss-button {
+    background: none;
+    border: none;
+    color: {{ block.settings.text_color }};
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    line-height: 1;
+  }
+
+  .zentra-announcement-bar-{{ block.id }} .zentra-dismiss-button:hover {
+    opacity: 1;
+  }
+
+  .zentra-announcement-bar-{{ block.id }}.zentra-dismissed {
+    display: none;
+  }
+
+  .zentra-announcement-bar-{{ block.id }} .zentra-cta-button {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: {{ block.settings.text_color }};
+    color: {{ block.settings.background_color }};
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: {{ block.settings.button_font_size_desktop }}px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+  }
+
+  .zentra-announcement-bar-{{ block.id }} .zentra-cta-button:hover {
+    opacity: 0.8;
+  }
+
+@media screen and (max-width: 749px) {
+  {% unless block.settings.show_on_mobile %}
+    .zentra-announcement-bar-{{ block.id }} {
+      display: none !important;
+    }
+  {% endunless %}
+
+  .zentra-announcement-bar-{{ block.id }} {
+    font-size: {{ block.settings.font_size_mobile }}px;
+    gap: {{ block.settings.controls_gap_mobile }}px;
+  }
+
+  .zentra-announcement-bar-{{ block.id }} .zentra-cta-button {
+    font-size: {{ block.settings.button_font_size_mobile }}px;
+  }
+}
+</style>
+
+<div class="zentra-announcement-bar-{{ block.id }}" data-zentra-block-id="{{ block.id }}">
+  {% if block.settings.show_manual_controls and message_count > 1 %}
+    <button class="zentra-nav-arrow zentra-prev-arrow" aria-label="Previous message">‹</button>
+  {% endif %}
+  
+  <div class="zentra-message-container">
+    {% if block.settings.message_1 != blank %}
+      <div class="zentra-message zentra-active">
+        {{ block.settings.message_1 }}
+        {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_link }}" class="zentra-cta-button">{{ block.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if block.settings.message_2 != blank %}
+      <div class="zentra-message">
+        {{ block.settings.message_2 }}
+        {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+        <a href="{{ block.settings.button_link }}" class="zentra-cta-button">{{ block.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if block.settings.message_3 != blank %}
+      <div class="zentra-message">
+        {{ block.settings.message_3 }}
+        {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_link }}" class="zentra-cta-button">{{ block.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if block.settings.message_4 != blank %}
+      <div class="zentra-message">
+        {{ block.settings.message_4 }}
+        {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_link }}" class="zentra-cta-button">{{ block.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if block.settings.message_5 != blank %}
+      <div class="zentra-message">
+        {{ block.settings.message_5 }}
+        {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+          <a href="{{ block.settings.button_link }}" class="zentra-cta-button">{{ block.settings.button_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  
+  {% if block.settings.show_manual_controls and message_count > 1 %}
+    <button class="zentra-nav-arrow zentra-next-arrow" aria-label="Next message">›</button>
+  {% endif %}
+
+  {% if block.settings.show_dismiss_button %}
+    <button class="zentra-dismiss-button" aria-label="Close announcement">×</button>
+  {% endif %}
+</div>
+
+{% if message_count > 1 %}
+<script>
+  (function() {
+    const bar = document.querySelector('[data-zentra-block-id="{{ block.id }}"]');
+    const messages = bar.querySelectorAll('.zentra-message');
+    const prevBtn = bar.querySelector('.zentra-prev-arrow');
+    const nextBtn = bar.querySelector('.zentra-next-arrow');
+    let currentIndex = 0;
+    let autoRotateInterval;
+    
+    function showMessage(index) {
+      messages.forEach((msg, i) => {
+        msg.classList.toggle('zentra-active', i === index);
+      });
+    }
+    
+    function nextMessage() {
+      currentIndex = (currentIndex + 1) % messages.length;
+      showMessage(currentIndex);
+    }
+    
+    function prevMessage() {
+      currentIndex = (currentIndex - 1 + messages.length) % messages.length;
+      showMessage(currentIndex);
+    }
+    
+    // Auto-rotate
+    {% if block.settings.auto_rotate %}
+      autoRotateInterval = setInterval(nextMessage, {{ block.settings.rotate_interval | times: 1000 }});
+      
+      // Pause on hover
+      bar.addEventListener('mouseenter', () => clearInterval(autoRotateInterval));
+      bar.addEventListener('mouseleave', () => {
+        autoRotateInterval = setInterval(nextMessage, {{ block.settings.rotate_interval | times: 1000 }});
+      });
+    {% endif %}
+    
+    // Manual controls
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      prevMessage();
+      if (autoRotateInterval) {
+        clearInterval(autoRotateInterval);
+        autoRotateInterval = setInterval(nextMessage, {{ block.settings.rotate_interval | times: 1000 }});
+      }
+    });
+    
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      nextMessage();
+      if (autoRotateInterval) {
+        clearInterval(autoRotateInterval);
+        autoRotateInterval = setInterval(nextMessage, {{ block.settings.rotate_interval | times: 1000 }});
+      }
+    });
+
+    // Dismiss button
+    const dismissBtn = bar.querySelector('.zentra-dismiss-button');
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => {
+        bar.classList.add('zentra-dismissed');
+      });
+    }
+  })();
+</script>
+{% endif %}
