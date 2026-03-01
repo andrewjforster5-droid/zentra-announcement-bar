@@ -30,6 +30,11 @@ api_version = "2026-04"
   topics = [ "app/scopes_update" ]
   uri = "/webhooks/app/scopes_update"
 
+[webhooks.privacy_compliance]
+customer_data_request_url = "https://zentra-announcement-bar.fly.dev/webhooks/customers/data_request"
+customer_deletion_url = "https://zentra-announcement-bar.fly.dev/webhooks/customers/redact"
+shop_deletion_url = "https://zentra-announcement-bar.fly.dev/webhooks/shop/redact"
+
 
 
 
